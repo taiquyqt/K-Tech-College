@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+    <style>
+        #hideParaBtn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #hideParaBtn:hover {
+            background-color: #45a049;
+        }
+        #infoPara {
+            font-size: 25px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <p id="infoPara">This is a paragraph that will be hidden when the button is clicked.</p>
+    <button id=hideParaBtn onclick="hide()">Hide Paragraph</button>
+    <script>
+        function hide() {
+            document.getElementById("infoPara").style.display = "none";
+        }
+    </script>
+</body>
+</html>

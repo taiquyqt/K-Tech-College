@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input{
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: rgb(153, 236, 236);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter your username"><br>
+    <button id="submitUsername" onclick="showUsername()">Submit</button>
+    <script>
+        function showUsername() {
+            let username = document.getElementById("username").value;
+            alert("Hello, " + username + "!");
+            document.getElementById("username").value = "";
+        }
+
+    </script>
+</body>
+</html>

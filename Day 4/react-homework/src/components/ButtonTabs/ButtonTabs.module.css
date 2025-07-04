@@ -1,0 +1,46 @@
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 24px auto;
+  }
+  
+  .tabButtons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .tabButton {
+    padding: 8px 18px;
+    background: #eee;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.18s;
+  }
+  
+  .tabButton.active {
+    background: #47B475;
+    color: #fff;
+  }
+  
+  .tabContent {
+    padding: 16px;
+    background: #fafbfc;
+    min-height: 60px;
+  }
+  
+  @media (max-width: 500px) {
+    .wrapper {
+      max-width: 100%;
+      padding: 0 8px;
+    }
+    .tabButton {
+      font-size: 14px;
+      padding: 7px 10px;
+    }
+    .tabContent {
+      padding: 10px;
+      font-size: 15px;
+    }
+  }

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block UI 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --container-width: 540px;
+            --font-family: 'Roboto', sans-serif;
+            --font-size: 13px;
+            --font-weight-bold: 700;
+            --color-white: #ffffff;
+            --color-background: #ecf0f1;
+            --spacing: 16px;
+            --block-height: 54px;
+            --label-width: 160px;
+            --spacing-bottom: 16px;
+
+            --bandwidth-primary: #e86966;
+            --bandwidth-secondary: #F75354;
+            --bandwidth-text: "Bandwidth";
+            --bandwidth-percentage: 30%;
+            --bandwidth-percentage-text: "30%";
+
+            --storage-primary: #2DB8CD;
+            --storage-secondary: #31C8DD;
+            --storage-text: "Storage";
+            --storage-percentage: 50%;
+            --storage-percentage-text: "50%";
+
+            --users-primary: #4AC25E;
+            --users-secondary: #51D567;
+            --users-text: "Users";
+            --users-percentage: 70%;
+            --users-percentage-text: "70%";
+
+            --visitors-primary: #E9C318;
+            --visitors-secondary: #FCD518;
+            --visitors-text: "Visitors";
+            --visitors-percentage: 30%;
+            --visitors-percentage-text: "30%";
+
+            --emails-primary: #BB70D5;
+            --emails-secondary: #CB79E7;
+            --emails-text: "Emails";
+            --emails-percentage: 45%;
+            --emails-percentage-text: "45%";
+
+            --basic-primary: #EB59D6;
+            --basic-secondary: #FE60E8;
+            --basic-text: "Basic";
+            --basic-percentage: 80%;
+            --basic-percentage-text: "80%";
+
+            --others-primary: #5890DA;
+            --others-secondary: #619BEC;
+            --others-text: "Others";
+            --others-percentage: 37%;
+            --others-percentage-text: "37%";
+        }
+
+        body {
+            background: var(--color-background);
+            font-family: var(--font-family);
+        }
+
+        .container {
+            width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: var(--spacing-bottom);
+            height: var(--block-height);
+        }
+
+        .left-column {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: var(--label-width);
+            height: 100%;
+        }
+
+        .left-column>span {
+            margin-right: var(--spacing);
+            color: var(--color-white);
+            font-family: var(--font-family);
+            font-size: var(--font-size);
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+        }
+
+        .right-column {
+            flex: 1;
+            background-color: var(--color-background);
+        }
+
+        .right-column-percent {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 0%;
+            transition: width 1.5s ease-out;
+            overflow: hidden;
+        }
+
+        .bandwidth-percent.animate {
+            width: var(--bandwidth-percentage);
+        }
+
+        .storage-percent.animate {
+            width: var(--storage-percentage);
+        }
+
+        .users-percent.animate {
+            width: var(--users-percentage);
+        }
+
+        .visitors-percent.animate {
+            width: var(--visitors-percentage);
+        }
+
+        .emails-percent.animate {
+            width: var(--emails-percentage);
+        }
+
+        .basic-percent.animate {
+            width: var(--basic-percentage);
+        }
+
+        .others-percent.animate {
+            width: var(--others-percentage);
+        }
+
+        .right-column-percent>span {
+            margin-left: var(--spacing);
+            color: var(--color-white);
+            font-family: var(--font-family);
+            font-size: var(--font-size);
+            font-weight: var(--font-weight-bold);
+            white-space: nowrap;
+        }
+
+        .bandwidth-color-primary {
+            background-color: var(--bandwidth-primary);
+        }
+
+        .bandwidth-color-secondary {
+            background-color: var(--bandwidth-secondary);
+        }
+
+        .bandwidth-text::before {
+            content: var(--bandwidth-text);
+        }
+
+        .bandwidth-percent-text::before {
+            content: var(--bandwidth-percentage-text);
+        }
+
+        .storage-color-primary {
+            background-color: var(--storage-primary);
+        }
+
+        .storage-color-secondary {
+            background-color: var(--storage-secondary);
+        }
+
+        .storage-text::before {
+            content: var(--storage-text);
+        }
+
+        .storage-percent-text::before {
+            content: var(--storage-percentage-text);
+        }
+
+        .users-color-primary {
+            background-color: var(--users-primary);
+        }
+
+        .users-color-secondary {
+            background-color: var(--users-secondary);
+        }
+
+        .users-text::before {
+            content: var(--users-text);
+        }
+
+        .users-percent-text::before {
+            content: var(--users-percentage-text);
+        }
+
+        .visitors-color-primary {
+            background-color: var(--visitors-primary);
+        }
+
+        .visitors-color-secondary {
+            background-color: var(--visitors-secondary);
+        }
+
+        .visitors-text::before {
+            content: var(--visitors-text);
+        }
+
+        .visitors-percent-text::before {
+            content: var(--visitors-percentage-text);
+        }
+
+        .emails-color-primary {
+            background-color: var(--emails-primary);
+        }
+
+        .emails-color-secondary {
+            background-color: var(--emails-secondary);
+        }
+
+        .emails-text::before {
+            content: var(--emails-text);
+        }
+
+        .emails-percent-text::before {
+            content: var(--emails-percentage-text);
+        }
+
+        .basic-color-primary {
+            background-color: var(--basic-primary);
+        }
+
+        .basic-color-secondary {
+            background-color: var(--basic-secondary);
+        }
+
+        .basic-text::before {
+            content: var(--basic-text);
+        }
+
+        .basic-percent-text::before {
+            content: var(--basic-percentage-text);
+        }
+
+        .others-color-primary {
+            background-color: var(--others-primary);
+        }
+
+        .others-color-secondary {
+            background-color: var(--others-secondary);
+        }
+
+        .others-text::before {
+            content: var(--others-text);
+        }
+
+        .others-percent-text::before {
+            content: var(--others-percentage-text);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <section class="row">
+            <div class="left-column bandwidth-color-primary">
+                <span class="bandwidth-text"></span>
+            </div>
+            <div class="right-column">
+                <div class="right-column-percent bandwidth-color-secondary bandwidth-percent">
+                    <span class="bandwidth-percent-text"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="left-column storage-color-primary">
+                <span class="storage-text"></span>
+            </div>
+            <div class="right-column">
+                <div class="right-column-percent storage-color-secondary storage-percent">
+                    <span class="storage-percent-text"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="left-column users-color-primary">
+                <span class="users-text"></span>
+            </div>
+            <div class="right-column">
+                <div class="right-column-percent users-color-secondary users-percent">
+                    <span class="users-percent-text"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="left-column visitors-color-primary">
+                <span class="visitors-text"></span>
+            </div>
+            <div class="right-column">
+                <div class="right-column-percent visitors-color-secondary visitors-percent">
+                    <span class="visitors-percent-text"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="left-column emails-color-primary">
+                <span class="emails-text"></span>
+            </div>
+            <div class="right-column">
+                <div class="right-column-percent emails-color-secondary emails-percent">
+                    <span class="emails-percent-text"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="left-column basic-color-primary">
+                <span class="basic-text"></span>
+            </div>
+            <div class="right-column">
+                <div class="right-column-percent basic-color-secondary basic-percent">
+                    <span class="basic-percent-text"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="left-column others-color-primary">
+                <span class="others-text"></span>
+            </div>
+            <div class="right-column">
+                <div class="right-column-percent others-color-secondary others-percent">
+                    <span class="others-percent-text"></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.right-column-percent');
+            setTimeout(() => {
+                bars.forEach(bar => {
+                    bar.classList.add('animate');
+                });
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task 2</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+       
+        #changeTextBtn {
+            background-color: #29959c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: yellow;
+            border-color: red;
+        }
+
+    </style>
+    <body>
+    
+        <!-- task2 -->
+        <span class="task">- Task 2: Toggle a CSS Class on an Element</span>
+        <div class="box"></div>
+        <button id="toggleClassBtn" onclick="doicss()">Toggle
+            Class</button><br><br>
+    
+<script>
+    function doicss(){
+        let box = document.querySelector(".box");
+        box.classList.toggle("highlight"); // toggle để thêm hoặc xóa class
+    }
+    
+</script>
+    </body>
+</html>

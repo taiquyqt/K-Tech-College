@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    flex: 5;
+    gap: 10px;
+}
+
+.frame1, .frame2 {
+    width: 250px;
+    height: 400px;
+    background-color: #E2E9EE;
+    border-radius: 10px;
+    padding: 15px; 
+    align-items: center;
+    justify-content: center;
+}
+
+.frame5 {
+  background-color: #e5ecf0;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 320px;
+}
+.mainContainer {
+  display: flex;
+  padding: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 100vh;
+}
+.boxContainer {
+  background: #e2e9ee;
+  padding: 30px 20px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 1000px;
+}

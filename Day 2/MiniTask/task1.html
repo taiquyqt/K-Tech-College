@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task 1</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+        .task {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+        #tieude {
+            font-size: 24px;
+            padding: 10px;
+        }
+        #changeTextBtn {
+            background-color: #29959c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+    </style>
+    <body>
+        <!-- task1 -->
+        <span class="task">- Task 1: Change Text Content of a Div</span>
+        <div id="tieude">Xin chào</div>
+        <button id="changeTextBtn" onclick="thaydoi()">Đổi lời
+            chào</button><br><br>
+        <script>
+    // task1
+    function thaydoi(){
+        let tieude = document.getElementById("tieude");
+        tieude.innerText = "Hello, JavaScript!";// innerText để thya đổi nội dung
+    }
+   
+</script>
+    </body>
+</html>

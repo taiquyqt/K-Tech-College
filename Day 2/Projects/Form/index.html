@@ -1,0 +1,84 @@
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="registrationForm" novalidate>
+        <h2>User Registration</h2>
+
+        <label>Full Name:
+            <input type="text" id="fullName" required>
+            <span class="error" id="nameError"></span>
+        </label>
+
+        <label>Email:
+            <input type="email" id="email" required>
+            <span class="error" id="emailError"></span>
+        </label>
+
+        <label>Password:
+            <input type="password" id="password" required>
+            <span class="error" id="passwordError"></span>
+        </label>
+
+        <label>Confirm Password:
+            <input type="password" id="confirmPassword" required>
+            <span class="error" id="confirmPasswordError"></span>
+        </label>
+
+        <label>Phone Number:
+            <input type="tel" id="phone" required>
+            <span class="error" id="phoneError"></span>
+        </label>
+
+        <div class="gender">
+            <span>Gender:</span>
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+            <span class="error" id="genderError"></span>
+        </div>
+
+        <label>Date of Birth:
+            <input type="date" id="dob" required>
+            <span class="error" id="dobError"></span>
+        </label>
+
+        <label>Country:
+            <select id="country" required>
+                <option value="">Select Country</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Vietnam">Vietnam</option>
+            </select>
+            <span class="error" id="countryError"></span>
+        </label>
+
+        <div class="hobbies">
+            <span>Hobbies:</span>
+            <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+            <label><input type="checkbox" name="hobbies" value="Sports"> Sports</label>
+            <label><input type="checkbox" name="hobbies" value="Music"> Music</label>
+            <span class="error" id="hobbiesError"></span>
+        </div>
+
+        <label>Profile Picture:
+            <input type="file" id="profilePic" accept=".jpg,.jpeg,.png">
+        </label>
+
+        <label>Bio / About You:
+            <textarea id="bio" maxlength="300"></textarea>
+        </label>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

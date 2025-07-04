@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 100px;
+    }
+    button {
+        padding: 20px;
+        font-size: 50px;
+    }
+    .text {
+        grid-column: span 4;
+        font-size: 50px;
+        text-align: right;
+        padding: 20px;
+    }
+    .operator {
+        background-color: rgb(45, 132, 209);
+        color: black;
+    }
+    .delete {
+        background-color: rgb(214, 36, 36);
+        color: white;
+    }
+</style>
+<body>
+    <div class="container">
+        <input type="text" id="display" disabled class="text">
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="delete">AC</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator">-</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator">*</button>
+        <button class="number">0</button>
+        <button class="number">.</button>
+        <button class="operator">/</button>
+         <button class="operator">=</button>
+        
+    </div>
+   <script>
+    const display = document.getElementById('display');
+    const numbers = document.querySelectorAll('.number');
+    const operators = document.querySelectorAll('.operator');
+    const deleteButton = document.querySelector('.delete');
+
+    let expression = '';
+
+    // Xóa toàn bộ
+    deleteButton.addEventListener('click', () => {
+        expression = '';
+        display.value = '';
+    });
+
+    // Xử lý khi bấm số
+    numbers.forEach(button => {
+        button.addEventListener('click', () => {
+            expression += button.textContent;
+            display.value = expression;
+        });
+    });
+
+    // Xử lý khi bấm toán tử
+    operators.forEach(button => {
+        button.addEventListener('click', () => {
+            const value = button.textContent;
+            if (value === '=') {
+                try {
+                    const result = eval(expression);
+                    display.value = result;
+                    expression = result.toString(); // Giữ kết quả để tiếp tục tính tiếp
+                } catch {
+                    display.value = 'Lỗi';
+                    expression = '';
+                }
+            } else {
+                expression += value;
+                display.value = expression;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

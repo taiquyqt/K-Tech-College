@@ -1,0 +1,70 @@
+/* src/components/Frame4/Frame4.module.css */
+.frame4 {
+  background-color: #e5ecf0;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 320px;
+}
+
+.card {
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.topUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bottomUser {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarLarge {
+  width: 60px;
+  height: 60px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  object-fit: cover;
+}
+
+.textInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.textInfo p {
+  margin: 0;
+  font-size: 12px;
+  color: #999;
+}
+
+.icon {
+  color: #111;
+}
+
+.name {
+  flex-grow: 1;
+  font-weight: 500;
+  font-size: 16px;
+}

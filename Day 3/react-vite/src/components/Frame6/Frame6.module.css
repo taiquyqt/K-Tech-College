@@ -1,0 +1,83 @@
+.frame6 {
+  background-color: #e5ecf0;
+  padding: 20px;
+  border-radius: 20px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 12px;
+  color: #888;
+}
+
+.right {
+  text-align: right;
+}
+
+.amount {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.time {
+  font-size: 12px;
+  color: #888;
+}
+
+.notify {
+  background-color: #fff;
+  padding: 12px 16px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  background-color: #000;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+}

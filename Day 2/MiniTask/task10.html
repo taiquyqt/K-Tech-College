@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+    input[type="email"] {
+        padding: 10px;
+        font-size: 1em;
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 1em;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #4cae4c;
+    }
+    #emailMessage {
+        display: block;
+        margin-top: 10px;
+        font-size: 1em;
+    }
+</style>
+<body>
+    <input type="email" placeholder="Enter your email" id="emailInput">
+    <button id="validateBtn" onclick="checkmail()">Check</button>
+    <span id="emailMessage"></span>
+</body>
+<script>
+    function checkmail() {
+        const emailInput = document.getElementById("emailInput").value;
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        document.getElementById("emailMessage").innerText = emailPattern.test(emailInput) ? "Valid email address" : "Invalid email address";
+    }
+</script>
+</html>

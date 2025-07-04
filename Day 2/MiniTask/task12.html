@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #greetingText {
+        font-size: 24px;
+        color: #2f2626;
+    }
+</style>
+<body>
+    <p id="greetingText">Chào buổi sáng</p>
+</body>
+<script>
+    function changeGreeting() {
+        let greetingText = document.getElementById("greetingText");
+        let currentHour = new Date().getHours();
+        if (currentHour < 12) {
+            greetingText.innerHTML = "Chào buổi sáng";
+        } else if (currentHour < 18) {
+            greetingText.innerHTML = "Chào buổi chiều";
+        } else {
+            greetingText.innerHTML = "Chào buổi tối";
+        }
+    }
+
+    changeGreeting();
+</script>
+</html>

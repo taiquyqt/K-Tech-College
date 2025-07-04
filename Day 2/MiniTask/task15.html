@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 15</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #bioInput {
+            width: 300px;
+            height: 100px;
+        }
+        #charCount {
+            margin-top: 10px;
+            color: #555;
+        }
+    </style>
+
+    <textarea id="bioInput" maxlength="200" placeholder="Enter your bio..."></textarea>
+    <p id="charCount">200 characters remaining</p>
+
+    <script>
+        const bioInput = document.getElementById('bioInput');
+        const charCount = document.getElementById('charCount');
+
+        bioInput.addEventListener('input', function() {
+            const remaining = 200 - this.value.length;
+            charCount.textContent = `${remaining} characters remaining`;
+        });
+    </script>   
+</body>
+</html>

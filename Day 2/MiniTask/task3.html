@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<style>
+    #itemInput {
+        width: 200px;
+        padding: 10px;
+        font-size: 20px;
+    }
+    #addItemBtn {
+        padding: 10px 15px;
+        font-size: 20px;
+    
+    }
+    li {
+        margin: 5px 0;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <input type="text" id="itemInput" placeholder="Enter item name">
+    <button id="addItemBtn" onclick="addItem()">Add Item</button>
+</body>
+<script>
+    function addItem() {
+        let itemInput = document.getElementById("itemInput");
+        let itemName = itemInput.value.trim();
+        if (itemName !== "") {
+            // Create a new li element
+            let newItem = document.createElement("li");
+            newItem.innerText = itemName;
+            // Append the new item to the body (or any other container)
+            document.body.appendChild(newItem);
+
+            // Clear the input
+            itemInput.value = "";
+        }
+    }
+</script>
+</html>

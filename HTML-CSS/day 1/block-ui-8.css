@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f6fc;
+  padding: 40px;
+}
+
+.skills-box {
+  background: white;
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.skill {
+  margin-bottom: 25px;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #313a3e;
+}
+
+.label i {
+  font-size: 20px;
+}
+
+/* Skill bar background */
+.bar {
+  background: #e6e6e6;
+  height: 10px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+/* Filled part of the bar */
+.fill {
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* Specific skill colors */
+.html-fill { background: #4CAF50; }
+.css-fill { background: #F44336; }
+.php-fill { background: #03A9F4; }
+.java-fill { background: #FFC107; }
+.net-fill  { background: #9C27B0; }
+
+/* Optional icon colors */
+.html { color: #4CAF50; }
+.css { color: #F44336; }
+.php { color: #03A9F4; }
+.java { color: #FFC107; }
+.net  { color: #9C27B0; }
