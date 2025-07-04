@@ -1,0 +1,81 @@
+.form {
+    max-width: 430px;
+    margin: 40px auto;
+    padding: 24px 20px 20px 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .label {
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 2px;
+  }
+  .input, .textarea, select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    font-size: 1em;
+    margin-bottom: 2px;
+  }
+  .input[type="file"] {
+    padding: 4px 0;
+  }
+  .textarea {
+    resize: vertical;
+    min-height: 60px;
+  }
+  .radioGroup, .checkboxGroup {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 2px;
+  }
+  .radioLabel, .checkboxLabel {
+    font-weight: 400;
+    font-size: 0.98em;
+  }
+  .error {
+    color: #e11d48;
+    font-size: 0.96em;
+    margin-bottom: 2px;
+  }
+  .bioCount {
+    font-size: 0.94em;
+    color: #666;
+    text-align: right;
+    margin-bottom: 4px;
+  }
+  .button {
+    background: #2563eb;
+    color: #fff;
+    font-size: 1.15em;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .button:hover {
+    background: #1e40af;
+  }
+  .success {
+    color: #16a34a;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+  }
+  @media (max-width: 600px) {
+    .form {
+      padding: 12px;
+    }
+  }
