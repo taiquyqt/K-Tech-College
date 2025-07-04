@@ -1,0 +1,10 @@
+.frame {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}

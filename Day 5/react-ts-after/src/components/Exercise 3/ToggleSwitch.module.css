@@ -1,0 +1,9 @@
+.container {
+  margin: 16px;
+}
+button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}

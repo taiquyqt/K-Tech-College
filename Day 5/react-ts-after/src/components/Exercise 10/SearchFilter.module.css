@@ -1,0 +1,14 @@
+.container {
+    margin: 16px;
+  }
+  input {
+    margin-bottom: 8px;
+    padding: 6px 12px;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    padding: 4px 0;
+  }
