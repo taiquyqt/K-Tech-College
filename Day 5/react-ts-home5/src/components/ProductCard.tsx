@@ -8,7 +8,7 @@ interface Props {
 
 const formatPrice = (n: number) => n.toLocaleString("vi-VN") + " ₫";
 
-const ProductCard: React.FC<Props> = ({ product }) => {
+const ProductCard = ({ product } : Props) => {
   const { cart, addToCart, updateQuantity } = useCart();
   const item = cart.find((i) => i.id === product.id);
   const quantity = item?.quantity || 0;

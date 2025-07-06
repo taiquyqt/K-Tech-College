@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useCart } from "./CartContext";
 import styles from "./CartIcon.module.css";
 
@@ -6,7 +6,7 @@ interface Props {
   onClick: () => void;
 }
 
-const CartIcon: React.FC<Props> = ({ onClick }) => {
+const CartIcon = ({ onClick }:Props) => {
   const { cart } = useCart();
   const total = cart.reduce((sum, item) => sum + item.quantity, 0);
 

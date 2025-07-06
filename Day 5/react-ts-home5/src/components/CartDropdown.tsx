@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useCart } from "./CartContext";
 import styles from "./CartDropdown.module.css";
 
@@ -8,7 +8,7 @@ interface Props {
   onClose: () => void;
 }
 
-const CartDropdown: React.FC<Props> = ({ onClose }) => {
+const CartDropdown = ({ onClose }: Props) => {
   const { cart, removeFromCart, updateQuantity } = useCart();
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
