@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Calculator from "./components/Calculator/Calculator";
 import RegistrationForm from "./components/Registration/RegistrationForm";
 import ProductGrid from "./components/ProductGrid";
