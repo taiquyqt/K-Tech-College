@@ -7,3 +7,17 @@
     background-color:#FFFFFF;
     box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   }
+  .wrapper {
+  position: relative;
+  width: 100%;
+}
+.icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none; /* để click không bị icon chặn */
+  font-size: 20px;
+  padding-right: 8px;
+}

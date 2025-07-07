@@ -1,4 +1,4 @@
-
+import { IoMdSearch } from 'react-icons/io'; // Icon tìm kiếm
 import styles from './SearchBar.module.css';
 
 type Props = {
@@ -8,11 +8,14 @@ type Props = {
 
 export default function SearchBar({ value, onChange }: Props) {
   return (
-    <input
-      className={styles.input}
-      value={value}
-      onChange={e => onChange(e.target.value)}
-      placeholder="Danang"
-    />
+    <div className={styles.wrapper}>
+      <input
+        className={styles.input}
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        placeholder="Danang"
+      />
+      <IoMdSearch className={styles.icon} />
+    </div>
   );
 }
