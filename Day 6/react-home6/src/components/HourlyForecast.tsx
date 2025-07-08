@@ -18,7 +18,7 @@ export default function HourlyForecast({ hours }: Props) {
       {hours.map((h, idx) => (
         <div key={idx} className={styles.hourItem}>
           <img src={h.icon} alt="" className={styles.icon} />
-          <div className={styles.temp}>{h.temp}°</div>
+          <div className={styles.temp}>{h.temp}°C</div>
           <div className={styles.time}>{h.now ? 'Now' : h.time}</div>
         </div>
       ))}
