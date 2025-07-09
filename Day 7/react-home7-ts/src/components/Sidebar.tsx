@@ -1,7 +1,7 @@
 
 import { NavLink } from 'react-router-dom'
 import styles from './Sidebar.module.css'
-import { FaHome, FaUser, FaMap, FaUserMd, FaHistory, FaCog } from 'react-icons/fa'
+import { FaHome, FaUser, FaMap, FaUserMd, FaHistory, FaCog, FaHospital } from 'react-icons/fa'
 import { IoLogoEuro } from "react-icons/io";
 
 export default function Sidebar() {
@@ -9,7 +9,14 @@ export default function Sidebar() {
         <div>
             <nav>
                 <ul className={styles.sidebar}>
-                        <IoLogoEuro className={styles.logo}/>
+                        <div className={styles.logoContainer}>
+                            <IoLogoEuro className={styles.logo}/>
+                            {/* //them ten ben phải logo */}
+                            <div className={styles.logoText}>
+                                <h1>H-Care</h1>
+                            </div>
+                        </div>
+                        
                         <NavLink
                             to="/patients"
                             className={({ isActive }) =>
@@ -47,7 +54,17 @@ export default function Sidebar() {
                                     <span>Map</span>
                                 </>
                             )}
-                        </NavLink>
+                    </NavLink>
+                    <NavLink to="/departments" className={({ isActive }) =>
+                        `${styles.navItem} ${isActive ? styles.activeLink : ''}`
+                    }>
+                        {({ isActive }) => (
+                            <>
+                                <FaHospital className={`${styles.icon} ${isActive ? styles.activeIcon : ''}`} />
+                                <span>Departments</span>
+                            </>
+                        )}
+                    </NavLink>
                     
                         <NavLink to="/doctors" className={({ isActive }) =>
                             `${styles.navItem} ${isActive ? styles.activeLink : ''}`
