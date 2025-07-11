@@ -12,60 +12,68 @@ type Props = {
 
 export default function TaskList({ tasks, onEdit, onDelete }: Props) {
   return (
-    <table className="min-w-full divide-y divide-gray-200">
-      <thead className="bg-gray-50">
-        <tr>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Task</th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Priority</th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Start Date</th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Due Date</th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Completed Date
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assignee</th>
-          <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-        </tr>
-      </thead>
-      <tbody className="bg-white divide-y divide-gray-200">
-        {tasks.map((task: Task) => (
-          <tr key={task.id} className="hover:bg-gray-200 transition-colors">
-            <td className="px-6 py-4 whitespace-nowrap">
-              <TaskTitle task={{ title: task.title, description: task.description }} />
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-2">
+      {tasks.map((task) => (
+        <div
+          key={task.id}
+          className="bg-white shadow-md rounded-lg p-5 border border-gray-200 hover:shadow-lg transition-shadow"
+        >
+          {/* Title & Description */}
+          <div className="mb-3">
+            <TaskTitle task={{ title: task.title, description: task.description }} />
+          </div>
+
+          {/* Status, Priority */}
+          <div className="flex justify-between items-center text-sm text-gray-600 mb-2">
+            <span className="flex items-center gap-1">
+              <strong>Status:</strong>
               <TaskStatus task={task} />
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-center">
+            </span>
+            <span className="flex items-center gap-1">
+              <strong>Priority:</strong>
               <TaskPriority priority={task.priority} />
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-              <TaskDate date={task.start_date} />
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-              <TaskDate date={task.due_date} />
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-              <TaskDate date={task.completed_date} />
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{task.assignee_id || 'Unassigned'}</td>
-            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex gap-2">
-              <button
-                onClick={() => onEdit?.(task.id)}
-                className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-              >
-                Edit
-              </button>
-              <button
-                onClick={() => onDelete?.(task.id)}
-                className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+            </span>
+          </div>
+
+          {/* Dates */}
+          <div className="text-sm text-gray-700 mb-2">
+            <p>
+              <strong>Start:</strong> <TaskDate date={task.start_date} />
+            </p>
+            {task.due_date && (
+              <p>
+                <strong>Due:</strong> <TaskDate date={task.due_date} />
+              </p>
+            )}
+            {task.completed_date && (
+              <p>
+                <strong>Completed:</strong> <TaskDate date={task.completed_date} />
+              </p>
+            )}
+          </div>
+
+          {/* Assignee */}
+          <div className="text-sm text-gray-700 mb-4">
+            <strong>Assignee:</strong> {task.assignee_id || 'Unassigned'}
+          </div>
+
+          {/* Actions */}
+          <div className="flex justify-end gap-2">
+            <button
+              onClick={() => onEdit?.(task.id)}
+              className="px-4 py-1.5 bg-blue-500 text-white rounded-md text-xs hover:bg-blue-600 transition-colors"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => onDelete?.(task.id)}
+              className="px-4 py-1.5 bg-red-500 text-white rounded-md text-xs hover:bg-red-600 transition-colors"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

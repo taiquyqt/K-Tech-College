@@ -75,10 +75,8 @@ export default function Tasks() {
           </div>
         </section>
 
-        <section>
-          <div className="overflow-x-auto">
+        <section>     
             <TaskList tasks={searchTasks(tasks, filters)} onEdit={handleEdit} onDelete={handleDelete} />
-          </div>
         </section>
       </section>
     </div>

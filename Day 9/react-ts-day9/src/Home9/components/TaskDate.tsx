@@ -3,8 +3,6 @@ type Props = {
   format?: 'short' | 'long';
 };
 
-// date = '2025-07-09T19:28:30.380Z'
-
 export default function TaskDate({ date, format = 'long' }: Props) {
   const formatDate = (date: Date | string, format: 'short' | 'long' | undefined) => {
     const parsedDate = typeof date === 'string' ? new Date(date) : date;

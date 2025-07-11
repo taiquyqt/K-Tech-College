@@ -1,5 +1,5 @@
 {
-  "name": "react-ts-day9",
+  "name": "react-ts-af8",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,15 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.1.1",
-    "@lottiefiles/dotlottie-react": "^0.14.2",
-    "lucide-react": "^0.525.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-hook-form": "^7.60.0",
-    "react-router": "^7.6.3",
-    "react-router-dom": "^7.6.3",
-    "yup": "^1.6.1"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

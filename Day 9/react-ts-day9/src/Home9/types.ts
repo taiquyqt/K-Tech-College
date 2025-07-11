@@ -23,4 +23,6 @@ export interface Task {
   export interface Filter {
     status?: string;
     priority?: string;
-  }
+    query?: string;
+}
+  

@@ -31,6 +31,12 @@ export default function MyTask() {
     navigate(`/update/${taskId}`);
   };
 
+  const handleDelete = async (taskId: string | number | undefined) => {
+    if (!taskId) return;
+    const confirmDelete = window.confirm('Are you sure you want to delete this task?');
+    if (!confirmDelete) return;
+  };
+
   // Filter tasks based on current filter criteria
   const filteredTasks = React.useMemo(() => {
     return searchTasks(tasks, filters);
@@ -59,10 +65,8 @@ export default function MyTask() {
           </div>
         </section>
 
-        <section>
-          <div className="overflow-x-auto">
-            <TaskList tasks={filteredTasks} onEdit={handleEdit} />
-          </div>
+        <section> 
+            <TaskList tasks={filteredTasks} onEdit={handleEdit} onDelete={handleDelete} />
         </section>
       </section>
     </div>

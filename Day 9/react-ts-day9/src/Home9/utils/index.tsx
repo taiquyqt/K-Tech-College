@@ -1,14 +1,19 @@
-import type { Filter, Task } from '../types';
 
-export const searchTasks = (tasks: Task[], filters: Filter): Task[] => {
-  if (!Array.isArray(tasks)) {
-    console.warn('Invalid tasks data:', tasks);
-    return [];
-  }
+import type { Task, Filter } from '../types';
 
+export function searchTasks(tasks: Task[], filters: Filter): Task[] {
   return tasks.filter((task) => {
-    if (filters.status && task.status !== filters.status) return false;
-    if (filters.priority && task.priority !== filters.priority) return false;
-    return true;
+    const matchesQuery =
+      !filters.query ||
+      task.title.toLowerCase().includes(filters.query.toLowerCase()) ||
+      task.description?.toLowerCase().includes(filters.query.toLowerCase());
+
+    const matchesStatus =
+      !filters.status || task.status === filters.status;
+
+    const matchesPriority =
+      !filters.priority || task.priority === filters.priority;
+
+    return matchesQuery && matchesStatus && matchesPriority;
   });
-};
+}

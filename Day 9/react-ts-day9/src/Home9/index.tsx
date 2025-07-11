@@ -10,7 +10,6 @@ import Tasks from './pages/Tasks';
 import UpdateTask from './pages/UpdateTask';
 import AccessDenied from './pages/AccessDenied';
 
-// Navigation Component
 const Navigation = () => {
   const navigate = useNavigate();
 
@@ -18,7 +17,7 @@ const Navigation = () => {
   console.log('Navigation user:', user);
 
   if (!user) {
-    return null; // Hide navigation if user is not logged in
+    return null; 
   }
 
   const navItems = [
@@ -42,7 +41,6 @@ const Navigation = () => {
             <h1 className="text-xl font-bold text-gray-800">Tasks Management</h1>
           </div>
 
-          {/* Navigation Links */}
           {
             <div className="flex space-x-1 whitespace-nowrap">
               {navItems.map((item) => (
@@ -60,8 +58,8 @@ const Navigation = () => {
               ))}
               <button
                 onClick={() => {
-                  setUser(null); // Clear user context on logout
-                  navigate('/login'); // Redirect to login page on logout
+                  setUser(null); 
+                  navigate('/login');
                 }}
                 className="px-4 py-2 rounded-md text-sm bg-red-500 font-medium transition-colors duration-200 text-white hover:bg-red-600"
               >
@@ -82,7 +80,7 @@ export default function TasksManagement() {
       <div className="bg-gray-50">
         <BrowserRouter>
           <Navigation />
-          <div className="container-fluid mx-auto px-8 py-4 whitespace-nowrap">
+          <div className="container-fluid mx-auto whitespace-nowrap">
             <Routes>
               <Route index element={<Login />} />
               <Route path="/login" element={<Login />} />
