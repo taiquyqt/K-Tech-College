@@ -5,6 +5,8 @@ import { login } from '../services/index';
 import { useNavigate } from 'react-router';
 import { useContext, useEffect } from 'react';
 import { LoginContext } from '../context';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 interface IFormInput {
   username: string;
@@ -63,13 +65,11 @@ const Login = () => {
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2">
       {/* Left image section */}
-      <div className="hidden md:flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-600 text-white p-10 relative ">
-        <h1 className="text-4xl font-bold mb-4 z-10">Welcome Back</h1>
-        <p className="text-lg z-10 text-center max-w-md mb-80">
-          Sign in to continue and manage your tasks efficiently.
-        </p>
-        <div className="absolute inset-0 bg-black bg-opacity-40 z-0" />
-      </div>
+      <DotLottieReact
+      src="https://lottie.host/bd249868-4296-4a7e-9767-36dda4a0b8bf/1cxj2b6eOH.lottie"
+      loop
+      autoplay
+    />
 
       {/* Right form section */}
       <div className="flex items-center justify-center p-8 bg-white">
