@@ -76,9 +76,9 @@ const Navigation = () => {
 };
 
 export default function TasksManagement() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<string | null>(null);
   return (
-    <LoginContext.Provider value={{ user: user, setUser: setUser }}>
+    <LoginContext.Provider value={{ user: user, setUser: (u: string | null) => setUser(u) }}>
       <div className="bg-gray-50">
         <BrowserRouter>
           <Navigation />
