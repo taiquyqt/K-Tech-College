@@ -22,7 +22,7 @@ export default function TaskPriority({ priority }: Props) {
 
     return (
       <span
-        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${priorityStyles[priority]}`}
+        className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border ${priorityStyles[priority]}`}
       >
         {priorityLabels[priority]}
       </span>

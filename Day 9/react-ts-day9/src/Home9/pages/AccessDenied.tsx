@@ -14,7 +14,9 @@ export default function AccessDenied() {
       <br />
 
       <Link className="text-blue-500 hover:underline" to="/login">
-        Login
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Login
+        </button>
       </Link>
       <DotLottieReact
       src="https://lottie.host/56814719-565e-4ad8-98a8-d9ace135ac5e/gJJCs0BuaB.lottie"

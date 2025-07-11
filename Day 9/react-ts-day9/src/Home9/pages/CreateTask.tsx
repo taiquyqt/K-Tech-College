@@ -99,7 +99,9 @@ export default function CreateTask() {
   };
 
   return (
-    <div className="max-w-screen mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="min-h-screen flex justify-center items-center bg-gray-100">
+  <div className="w-full max-w-2xl p-6 bg-white rounded-lg shadow-lg">
+
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Create New Task</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -287,6 +289,7 @@ export default function CreateTask() {
           </p>
         </div>
       </form>
+      </div>
     </div>
   );
 }

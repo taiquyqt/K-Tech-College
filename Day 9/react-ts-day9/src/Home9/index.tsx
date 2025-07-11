@@ -44,7 +44,7 @@ const Navigation = () => {
 
           {/* Navigation Links */}
           {
-            <div className="flex space-x-1">
+            <div className="flex space-x-1 whitespace-nowrap">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
@@ -82,7 +82,7 @@ export default function TasksManagement() {
       <div className="bg-gray-50">
         <BrowserRouter>
           <Navigation />
-          <div className="container-fluid mx-auto px-8 py-4">
+          <div className="container-fluid mx-auto px-8 py-4 whitespace-nowrap">
             <Routes>
               <Route index element={<Login />} />
               <Route path="/login" element={<Login />} />

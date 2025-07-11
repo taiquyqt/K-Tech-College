@@ -18,7 +18,7 @@ export default function TaskStatus({ task }: { task: Task }) {
 
     return (
       <span
-        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${statusStyles[status]}`}
+        className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border ${statusStyles[status]}`}
       >
         {statusLabels[status]}
       </span>

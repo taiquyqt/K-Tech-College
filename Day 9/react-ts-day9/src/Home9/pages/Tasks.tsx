@@ -6,7 +6,7 @@ import TaskList from '../components/TaskList';
 import { searchTasks } from '../utils/index';
 
 import type { Filter, Task } from '../types';
-import { getTasks } from '../services/index';
+import { deleteTask, getTasks } from '../services/index';
 
 export default function Tasks() {
   const navigate = useNavigate();
@@ -40,6 +40,21 @@ export default function Tasks() {
   const handleEdit = (taskId: string | number | undefined) => {
     navigate(`/update/${taskId}`);
   };
+  const handleDelete = async (taskId: string | number | undefined) => {
+    if (!taskId) return;
+  
+    const confirmDelete = window.confirm('Are you sure you want to delete this task?');
+    if (!confirmDelete) return;
+  
+    try {
+      await deleteTask(Number(taskId));
+      // Cập nhật lại danh sách task sau khi xóa
+      setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+    } catch (error) {
+      console.error('Error deleting task:', error);
+      alert('Failed to delete task.');
+    }
+  };
 
   return (
     <div>
@@ -62,7 +77,7 @@ export default function Tasks() {
 
         <section>
           <div className="overflow-x-auto">
-            <TaskList tasks={searchTasks(tasks, filters)} onEdit={handleEdit} />
+            <TaskList tasks={searchTasks(tasks, filters)} onEdit={handleEdit} onDelete={handleDelete} />
           </div>
         </section>
       </section>

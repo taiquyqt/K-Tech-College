@@ -51,6 +51,13 @@ export const updateTask = async (id: number, task: Task) => {
   return response.json();
 };
 
+export const deleteTask = async (id: number) => {
+  const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
+    method: 'DELETE',
+    headers: defaultHeaders,
+  });
+  return response.json();
+};
 export const getTasksByAssignee = async (assigneeId: number) => {
   const response = await fetch(`${baseUrl}/workspaces/tasks/assignee/${assigneeId}`, {
     headers: defaultHeaders,

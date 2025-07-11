@@ -65,7 +65,7 @@ const Login = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form
   onSubmit={handleSubmit(onSubmit)}
-  className="bg-white p-10 rounded-xl shadow-2xl w-full max-w-lg"
+  className="bg-white p-10 rounded-xl shadow-2xl w-full max-w-lg border-2 border-gray-300"
 >
   <h2 className="text-3xl font-bold text-center mb-8">Login</h2>
 
@@ -115,7 +115,7 @@ const Login = () => {
   <button
     type="submit"
     disabled={isSubmitting || !isValid}
-    className={`w-full py-3 text-lg rounded-md font-semibold transition-colors ${
+    className={`w-full bg-gradient-to-r from-blue-500 to-purple-500 py-3 text-lg rounded-md font-semibold transition-colors ${
       isSubmitting || !isValid
         ? 'bg-gray-400 cursor-not-allowed'
         : 'bg-blue-600 hover:bg-blue-700 text-white'
