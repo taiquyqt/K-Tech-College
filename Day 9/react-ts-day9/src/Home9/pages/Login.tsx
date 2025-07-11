@@ -63,66 +63,75 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+      <form
+  onSubmit={handleSubmit(onSubmit)}
+  className="bg-white p-10 rounded-xl shadow-2xl w-full max-w-lg"
+>
+  <h2 className="text-3xl font-bold text-center mb-8">Login</h2>
 
-        <div className="mb-4">
-          <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-            Username
-          </label>
-          <input
-            id="username"
-            type="text"
-            {...register('username')}
-            className={`w-full mt-2 p-2 border rounded-md focus:outline-none focus:ring-2 transition-colors ${
-              errors.username
-                ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
-                : !errors.username && dirtyFields.username
-                ? 'border-green-500 focus:border-green-500 focus:ring-green-200'
-                : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
-            }`}
-            placeholder="Enter your username"
-          />
-          {errors.username && <p className="text-red-500 text-xs mt-1">{errors.username.message}</p>}
-        </div>
+  {/* Username */}
+  <div className="mb-5">
+    <label htmlFor="username" className="block text-base font-medium text-gray-700 mb-1">
+      Username
+    </label>
+    <input
+      id="username"
+      type="text"
+      {...register('username')}
+      className={`w-full p-3 text-base border rounded-md focus:outline-none focus:ring-2 transition-colors ${
+        errors.username
+          ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+          : !errors.username && dirtyFields.username
+          ? 'border-green-500 focus:border-green-500 focus:ring-green-200'
+          : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
+      }`}
+      placeholder="Enter your username"
+    />
+    {errors.username && <p className="text-red-500 text-sm mt-1">{errors.username.message}</p>}
+  </div>
 
-        <div className="mb-6">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Password
-          </label>
-          <input
-            id="password"
-            type="password"
-            {...register('password')}
-            className={`w-full mt-2 p-2 border rounded-md focus:outline-none focus:ring-2 transition-colors ${
-              errors.password
-                ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
-                : !errors.password && dirtyFields.password
-                ? 'border-green-500 focus:border-green-500 focus:ring-green-200'
-                : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
-            }`}
-            placeholder="Enter your password"
-          />
-          {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
-        </div>
+  {/* Password */}
+  <div className="mb-6">
+    <label htmlFor="password" className="block text-base font-medium text-gray-700 mb-1">
+      Password
+    </label>
+    <input
+      id="password"
+      type="password"
+      {...register('password')}
+      className={`w-full p-3 text-base border rounded-md focus:outline-none focus:ring-2 transition-colors ${
+        errors.password
+          ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+          : !errors.password && dirtyFields.password
+          ? 'border-green-500 focus:border-green-500 focus:ring-green-200'
+          : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
+      }`}
+      placeholder="Enter your password"
+    />
+    {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
+  </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting || !isValid}
-          className={`w-full py-2 rounded-md font-medium transition-colors ${
-            isSubmitting || !isValid ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600 text-white'
-          }`}
-        >
-          {isSubmitting ? 'Logging in...' : 'Login'}
-        </button>
+  {/* Submit */}
+  <button
+    type="submit"
+    disabled={isSubmitting || !isValid}
+    className={`w-full py-3 text-lg rounded-md font-semibold transition-colors ${
+      isSubmitting || !isValid
+        ? 'bg-gray-400 cursor-not-allowed'
+        : 'bg-blue-600 hover:bg-blue-700 text-white'
+    }`}
+  >
+    {isSubmitting ? 'Logging in...' : 'Login'}
+  </button>
 
-        {/* Form validation status indicator */}
-        <div className="mt-4 text-center">
-          <p className={`text-xs ${isValid ? 'text-green-500' : 'text-red-500'}`}>
-            {isValid ? 'Form is valid ✓' : 'Please fill in all required fields correctly'}
-          </p>
-        </div>
-      </form>
+  {/* Form status */}
+  <div className="mt-5 text-center">
+    <p className={`text-sm ${isValid ? 'text-green-500' : 'text-red-500'}`}>
+      {isValid ? 'Form is valid' : 'Please fill in all required fields correctly'}
+    </p>
+  </div>
+</form>
+
     </div>
   );
 };
