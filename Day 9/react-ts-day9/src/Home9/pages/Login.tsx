@@ -105,7 +105,7 @@ const Login = () => {
           : !errors.password && dirtyFields.password
           ? 'border-green-500 focus:border-green-500 focus:ring-green-200'
           : 'border-gray-300 focus:border-blue-500 focus:ring-blue-200'
-      }`}
+      }`} 
       placeholder="Enter your password"
     />
     {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
