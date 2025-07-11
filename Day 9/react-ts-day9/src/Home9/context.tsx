@@ -1,4 +1,12 @@
-// Create LoginContext to manage login state
-import { createContext } from 'react';
+import { createContext } from "react";
 
-export const LoginContext = createContext({ user: null, setUser: (user: any) => {} });
+interface LoginContextType {
+    user: string | null;
+    setUser: (user: string) => void;
+  }
+  
+  export const LoginContext = createContext<LoginContextType>({
+    user: null,
+    setUser: () => {},
+  });
+  
