@@ -13,8 +13,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function TaskISR({ params }: { params: { id: string } }) {
-  const { id } = params; 
+export default async function TaskISR({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params; 
+  
   const response = await fetch(`https://server.aptech.io/online-shop/products/${id}`, {
     next: { revalidate: 60 },
   });
