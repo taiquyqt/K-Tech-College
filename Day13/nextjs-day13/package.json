@@ -1,0 +1,35 @@
+{
+  "name": "nextjs-day13",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^0.525.0",
+    "acorn": "^0.525.0",
+    "eslint-plugin-import": "latest",
+    "install": "^0.13.0",
+    "jiti": "2.4.2",
+    "lucide-react": "^0.525.0",
+    "next": "^0.525.0",
+    "picomatch": "latest",
+    "pnpm": "^10.13.1",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^0.525.0",
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "latest",
+    "@types/react": "^0.525.0",
+    "@types/react-dom": "latest",
+    "eslint": "^0.525.0",
+    "eslint-config-next": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}
