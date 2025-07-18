@@ -13,6 +13,8 @@ const getHeaders = (auth = true) => {
   }
   return headers;
 };
+console.log('[DEBUG] Sending token:', getAccessToken());
+
 
 const request = async (
   url: string,

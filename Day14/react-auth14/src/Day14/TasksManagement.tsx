@@ -20,6 +20,10 @@ export default function TasksManagement() {
         <div className="container-fluid mx-auto">
           <Routes>
             <Route
+              path="/"
+              element={<LoginForm />}
+            />
+            <Route
               path="/login"
               element={access_token ? <Navigate to="/tasks" replace /> : <LoginForm />}
             />
@@ -56,7 +60,6 @@ export default function TasksManagement() {
                 </ProtectedRoute>
               }
             />
-
             <Route path="*" element={<AccessDenied />} />
           </Routes>
         </div>
