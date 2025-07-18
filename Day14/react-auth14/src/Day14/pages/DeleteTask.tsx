@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getTaskById, deleteTask } from '../services/index';
+import { getTaskById, deleteTask } from '../libs/task-api';
 import type { Task } from '../types';
 
 export default function DeleteTask() {

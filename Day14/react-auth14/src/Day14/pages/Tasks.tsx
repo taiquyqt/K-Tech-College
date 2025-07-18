@@ -4,7 +4,7 @@ import TaskFilterForm from '../components/TaskFilterForm';
 import TaskList from '../components/TaskList';
 import { searchTasks } from '../utils/index';
 import type { Filter, Task } from '../types';
-import { deleteTask, getTasks } from '../services/index';
+import { deleteTask, getTasks } from '../libs/task-api';
 import { useAuthStore } from '../auth-store';
 
 export default function Tasks() {

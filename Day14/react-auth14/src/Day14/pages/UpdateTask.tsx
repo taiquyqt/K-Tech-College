@@ -4,8 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import * as yup from 'yup';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-
-import { getTaskById, updateTask } from '../services/index';
+import { getTaskById, updateTask } from '../libs/task-api';
 
 import type { Task } from '../types';
 // Form data interface (excluding auto-generated fields)
